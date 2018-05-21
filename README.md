@@ -1,4 +1,4 @@
-# redneckracing
+# Red Neck Racing
 Racing Game in Python based on "youtuber", sentdex's youtube tutorial.
 
 This game is my creation after following this tutorial on https://pythonprogramming.net/pygame-python-3-part-1-intro/ .  
