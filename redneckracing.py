@@ -42,10 +42,10 @@ pygame.display.set_icon(gameIcon)
 pause = True
 
 
-def life_cars(lives):
+def print_str (string,xpos,ypos):
     font=pygame.font.Font ("BloodyImpact.ttf",25)
-    text=font.render("Lives: "+ str(lives), True,yellow)
-    gameDisplay.blit(text, (20,40 ))                     
+    text=font.render(string, True,blue)
+    gameDisplay.blit(text, (xpos,ypos))                     
     
 def things_dodged (count):
     font = pygame.font.Font ("BloodyImpact.ttf", 25)
@@ -82,14 +82,14 @@ def quit_game ():
     quit ()
     
 def crash():
-    #pygame.mixer.music.pause()
-    #################yo###################
     pygame.mixer.Sound.play(crash_sound)
     pygame.mixer.music.stop()
-    ####################################
     message_display('You Crashed')
     time.sleep(1)
-    game_loop ()
+    gameDisplay.fill (black)
+    message_display('Game Over')
+    time.sleep (1)
+    game_intro()
     
 def button(msg,x,y,w,h,ic,ac,action): # (text_msg, x posit, y posit, width in pixles, height in pixles,inactive color, active color)
 
@@ -183,6 +183,7 @@ def game_intro():
         TextRect.center = ((display_width/2), (150)) #(display_height/2))
         gameDisplay.blit(TextSurf, TextRect)
         
+        print_str ("Copyright 2018 Adam Hansen",260,550)
         
         intcar (280,260)
 
